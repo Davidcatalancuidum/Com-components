@@ -15,7 +15,7 @@ function App() {
         onSizeChange={setCurrentSize}
       />
 
-      <h1>Color seleccionado: {currentColor}</h1>
+      <h1>Color seleccionado: </h1>
       <ColorSelector 
         selectedColor={currentColor}
         onColorChange={setCurrentColor}
