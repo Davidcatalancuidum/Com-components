@@ -1,26 +1,20 @@
 import '../index.css';
 
-const possibleColor = ['RED','BLUE','YELLOW','GREEN']
+const possibleColors = ['Red', 'Blue', 'Green', 'Yellow', 'Black', 'White'];
 
-interface Prop {
+interface Props {
     selectedColor: string;
-    onColorChange: ( color: string ) => void;
+    onColorChange: (color: string) => void;
 }
 
-export const ColorSelector:Fc<Prop> = ({ selectedColor, onColorChange }) => {
-    return(
-        <div style={{display: 'flex'}}>
-            {
-                possibleColor.map( color => (
-                    <button 
-                        key={ color } 
-                        className={ selectedColor === color ? 'active' : '' }
-                        onClick={ () => onColorChange( color ) }
-                    >
-                        { color }
-                    </button>
-                 ))
-            }
-        </div>
-    )
-}
+export const ColorSelector: React.FC<Props> = ({ selectedColor, onColorChange }) => {
+    return (
+        <select value={selectedColor} onChange={(e) => onColorChange(e.target.value)}>
+            {possibleColors.map(color => (
+                <option key={color} value={color}>
+                    {color}
+                </option>
+            ))}
+        </select>
+    );
+};

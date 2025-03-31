@@ -53,6 +53,28 @@ button {
   transition: all .3s ease-out;
 }
 
+select {
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 5px;
+}
+
+select:focus {
+  outline: none;
+  border: 2px solid #646cff;
+}
+
+option {
+  background-color: white;
+  color: black;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
